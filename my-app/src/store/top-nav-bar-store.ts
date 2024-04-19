@@ -1,11 +1,16 @@
 "use client"
 import { create } from "zustand"
 
-type PatientDashboardStoreState = {
-    patientDashboardView: string | null ,
+type TopNavBarTab = {
+    selectedTab: string,
+    setTab: (newTab: string) => void
 }
 
-export const usePatientStore = create<PatientDashboardStoreState>(() => ({
-    patientDashboardView: null,
+export const useTopNavBarTab = create<TopNavBarTab>((set) => ({
+    selectedTab: 'Home',
+    setTab: (newTab) => {
+        set({ selectedTab: newTab})
+     }
+    
 
 }))

@@ -1,18 +1,12 @@
 "use client"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { useEffect } from 'react';
+import { useTopNavBarTab } from '@/store/top-nav-bar-store';
 
-export default function TopNavBar ({
-  params,
-} : {
-  params: {topNavBarTabs: string },
-}) {
 
-  useEffect(() =>{
-    
-    console.log("param", params);
-  }, [params])
+export default function TopNavBar () {
 
+  const topNavBarTab = useTopNavBarTab((state) => state.selectedTab)
+  
   return (
     <>
       <Tabs defaultValue='account' className='w-[400px]'>

@@ -1,8 +1,8 @@
-import { useState } from "react"
+
 export default function PatientDashboard() {
     return (
         <>
-            <div>Patient Dashboard</div>
+            <div>Patient ad Dashboard</div>
         </>
     )
 }
